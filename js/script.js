@@ -255,36 +255,36 @@ $(function() {
         }
       }
 
-      $.get("data/center.csv", function(tmp_center_data) {
-        //ゴミ処理センターのデータを解析します。
-        //表示上は現れませんが、
-        //金沢などの各処理センターの休止期間分は一週間ずらすという法則性のため
-        //例えば第一金曜日のときは、一周ずらしその月だけ第二金曜日にする
-        var tmp = tmp_center_data.split("\n");
-        tmp.shift();
-        for (var i in tmp) {
-          var row = tmp[i].split(",");
+//    $.get("data/center.csv", function(tmp_center_data) {
+//      //ゴミ処理センターのデータを解析します。
+//      //表示上は現れませんが、
+//      //金沢などの各処理センターの休止期間分は一週間ずらすという法則性のため
+//      //例えば第一金曜日のときは、一周ずらしその月だけ第二金曜日にする
+//      var tmp = tmp_center_data.split("\n");
+//      tmp.shift();
+//      for (var i in tmp) {
+//        var row = tmp[i].split(",");
 
-          var center = new CenterModel(row);
-          center_data.push(center);
-        }
-        //ゴミ処理センターを対応する各地域に割り当てます。
-        for (var i in areaModels) {
-          var area = areaModels[i];
-          area.setCenter(center_data);
-        };
-        //エリアとゴミ処理センターを対応後に、表示のリストを生成する。
-        //ListメニューのHTML作成
-        var selected_name = getSelectedAreaName();
-        var area_select_form = $("#select_area");
-        var select_html = "";
-        select_html += '<option value="-1">地域を選択してください</option>';
-        for (var row_index in areaModels) {
-          var area_name = areaModels[row_index].label;
-          var selected = (selected_name == area_name) ? 'selected="selected"' : "";
+//        var center = new CenterModel(row);
+//        center_data.push(center);
+//      }
+//      //ゴミ処理センターを対応する各地域に割り当てます。
+//      for (var i in areaModels) {
+//        var area = areaModels[i];
+//        area.setCenter(center_data);
+//      };
+//      //エリアとゴミ処理センターを対応後に、表示のリストを生成する。
+//      //ListメニューのHTML作成
+//      var selected_name = getSelectedAreaName();
+//      var area_select_form = $("#select_area");
+//      var select_html = "";
+//      select_html += '<option value="-1">地域を選択してください</option>';
+//      for (var row_index in areaModels) {
+//        var area_name = areaModels[row_index].label;
+//        var selected = (selected_name == area_name) ? 'selected="selected"' : "";
 
-          select_html += '<option value="' + row_index + '" ' + selected + " >" + area_name + "</option>";
-        }
+//        select_html += '<option value="' + row_index + '" ' + selected + " >" + area_name + "</option>";
+//      }
 
         //デバッグ用
         if (typeof dump == "function") {
