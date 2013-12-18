@@ -1,5 +1,9 @@
 label,sublabel,description,styles
-燃やさないごみ,,,img/moyasanai02.svg
-資源,,,img/shigen02.svg
-燃やすごみ,,,img/moyasu02.svg
-びん,,,img/bin02.svg
+燃やすごみ,,,
+ガラスびん,,,
+その他の可燃物,,,
+その他の不燃物,,,
+ペットボトル,,,
+プラ容器,,,
+,,,
+,,,
