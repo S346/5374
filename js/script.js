@@ -249,7 +249,7 @@ $(function() {
 
         areaModels.push(area);
         //２列目以降の処理
-        for (var i = 2; i < 2 + 4; i++) {
+        for (var i = 2; i < 2 + 5; i++) {
           var trash = new TrashModel(area_days_label[i], row[i]);
           area.trash.push(trash);
         }
